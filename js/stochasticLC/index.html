@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+    tex: {extensions: ["color.js"]}});
+  </script>
+  <script type="text/javascript"
+	  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+  </script>
+  <style>
+    body {height: 100%;width: 100%;}
+    #animation {
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    }
+    #svgAxes {
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    stroke: #000;
+    font: 10px sans-serif;
+    }
+    .axis {
+    stroke: none;
+    fill: #000;
+    }
+    .axis line, .axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+    }
+    #slider {
+    position: absolute;
+    top: 300px;
+    left: 550px;
+    width: 150px;
+    background: none;
+    font: 10px sans-serif;
+    }
+    #sliderLabel {
+    position: absolute;
+    top: 260px;
+    left: 575px;
+    font: 30px serif;
+    }
+    #ylabel {
+    position: absolute;
+    top: 150px;
+    left: 170px;
+    font: 30px serif;
+    }
+    #xlabel {
+    position: absolute;
+    top: 330px;
+    left: 350px;
+    font: 30px serif;
+    }
+    #equations {
+    position: absolute;
+    top: 370px;
+    left: 170px;
+    }
+  </style>
+  <body>
+    <canvas id="animation" width="250" height="250"></canvas>
+    <svg id="svgAxes" width="250" height="250"></svg>
+    <span id="xlabel" touch-action="none"><em>x</em></span>
+    <span id="ylabel" touch-action="none"><em>y</em></span>
+    
+    <span id="sliderLabel">&sigma; = <span id="sliderValue"></span></span>
+    <div style="text-align: center">
+      <input type="range" id="slider" value="10" min="0" max="50">
+    </div>
+    <div id="equations">
+      \[\begin{align}
+      dX &= \left[\gamma\left(1-X^2 - Y^2\right)X - \left(1 - \gamma c\left(1 - \sqrt{X^2 + Y^2}\right)^{2}\right)Y\right]dt + \sigma dW_x \\
+      dY &= \left[\gamma\left(1-X^2 - Y^2\right)Y + \left(1 - \gamma c\left(1 - \sqrt{X^2 + Y^2}\right)^{2}\right)X\right]dt + \sigma dW_y
+      \end{align}\]
+    </div>
+    <script type="text/javascript" src="http://iop.io/js/vendor/d3.v3.min.js"></script>
+    <script src="lc_anim.js"></script>
+  </body>
+</html>

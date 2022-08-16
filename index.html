@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="reveal.js/css/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <script type="text/javascript" src="js/d3.v3.min.js"></script>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Real Analysis</h1>
+          <p style="font-size: 48px">Prerak Srivastava</p>
+          <p style="font-size: 48px">Agrim Rawat</p>
+          <p>Monsoon Semester @ IIITH '22</p>
+        </section>
+        <section>
+          <h1>Mathematical Induction</h1>
+          <a
+            href="http://www.cs.cornell.edu/courses/cs2800/2011fa/Lectures/induction.pdf"
+            style="text-align: left; font-size: 15px"
+            >Reference Paper</a
+          >
+        </section>
+        <!-- ################################################### -->
+        <!-- ################################################### -->
+        <section data-auto-animate>
+          <h3 style="font-weight: bold">Concept of Mathematical Induction</h3>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • Technique mostly used for rigrously proving statements
+            <br /><br />
+            • Used to check the validity of a formula without having <br />
+              to check each and every case by hand <br /><br />
+          </p>
+        </section>
+        <section>
+          <h3 style="font-weight: bold">Components of Inductive Proof</h3>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • Base case - usually $ n = 1 $ <br /><br />
+            • Induction Hypothesis - Strong/Weak (Assume $P(k)$ holds)
+            <br /><br />
+            • Inductive Step - Prove hypothesis ($P(k) \implies P(k+1)$)<br /><br />
+          </p>
+        </section>
+        <section>
+          <h3 style="font-weight: bold">Strong v/s Weak Induction</h3>
+          <p>
+            The difference between weak induction and strong induction appears
+            in the induction hypothesis
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • Weak Induction - $P$ is true only at k<br /><br />
+            • Strong Induction - $P$ is true $\forall \ \ i \ \in
+            \{1,2,3,...,k\}$ <br /><br />
+          </p>
+        </section>
+        <section data-state="IonSlide">
+          <h3>Example</h3>
+          <br />
+          <h4>Prove the following statement is true for all integers $n$.</h4>
+          $$P:\sum_{i=1}^n i = \frac{n(n+1)}{2}$$
+          <section style="margin-top: 10%">
+            <textBox touch-action="none">
+              <boxTitle>
+                <h3>Base Case</h3>
+              </boxTitle>
+              <p>
+                We prove that the statement is true for $n = 1$ \[
+                P(1):\sum_{i=1}^1 i = \frac{1(1 + 1)}{2} = 1\]
+              </p>
+            </textBox>
+          </section>
+          <section style="margin-top: 10%">
+            <textBox>
+              <boxTitle>
+                <h3>Induction Hypothesis</h3>
+              </boxTitle>
+              <p>
+                (Weak) Assume the statement to be true for some $n=k$
+                \[P(k):\sum_{i=1}^{k}i=\frac{k(k+1)}{2}\]
+              </p>
+            </textBox>
+          </section>
+          <section style="margin-top: 10%">
+            <textBox>
+              <boxTitle>
+                <h3>Inductive Step</h3>
+              </boxTitle>
+              <p>
+                We prove the statement for $n=k+1$
+                $$P(k+1):\sum_{i=1}^{k+1}i=\sum_{i=1}^{k}i+(k+1)=\frac{k(k+1)}{2}+k+1=\frac{(k+1)(k+2)}{2}$$
+                Thus, $P$ is true for all $n$
+              </p>
+            </textBox>
+          </section>
+        </section>
+        <section data-state="IonSlide">
+          <h3>Weak Induction Example</h3>
+          <br />
+          <h4>Show that</h4>
+          $$P: \sqrt{2 + \sqrt{2 + \sqrt{2 + \ ... \ + \sqrt{2}}}} =
+          2\cos{\frac{\pi}{2^{n+1}}}$$
+          <p>Here there are $n$ 2s in the expression on the left</p>
+        </section>
+        <script src="js/ionChannelAnim.js"></script>
+        <!-- ################################################### -->
+        <!-- ################################################### -->
+        <section>
+          <h3>Solution</h3>
+          <br />
+          <section>
+            <textBox touch-action="none">
+              <boxTitle>
+                <h3>Base Case</h3>
+              </boxTitle>
+              <p>
+                We prove that the statement is true for $n = 1$ \[ P(1):\sqrt{2}
+                = 2\cos{\frac{\pi}{2^{2}}} = \sqrt{2}\]
+              </p>
+            </textBox>
+          </section>
+          <section>
+            <textBox>
+              <boxTitle>
+                <h3>Induction Hypothesis</h3>
+              </boxTitle>
+              <p>(Weak) Assume the statement to be true for some $n=k$</p>
+              \[ P(k): \sqrt{2 + \sqrt{2 + \sqrt{2 + \ ... \ + \sqrt{2}}}} =
+              2\cos{\frac{\pi}{2^{k+1}}} \]
+            </textBox>
+          </section>
+          <section>
+            <textBox>
+              <boxTitle>
+                <h3>Inductive Step</h3>
+              </boxTitle>
+              <p>Adding 2 and taking square root on both sides</p>
+              \[ P(k+1): \sqrt{2 + 2\cos{\frac{\pi}{2^{k+1}}}} =
+              2\cos{\frac{\pi}{2^{k+2}}} \]
+            </textBox>
+          </section>
+        </section>
+        <!-- ################################################### -->
+        <!-- ################################################### -->
+        <section data-state="IonSlide">
+          <h3>Strong Induction Example</h3>
+          <br />
+          <h4>
+            Show that every integer greater than or equal to 2 can be factored
+            into primes
+          </h4>
+        </section>
+        <script src="js/ionChannelAnim.js"></script>
+        <!-- ################################################### -->
+        <!-- ################################################### -->
+        <section>
+          <h3>Solution</h3>
+          <br />
+          <section>
+            <textBox touch-action="none">
+              <boxTitle>
+                <h3>Base Case</h3>
+              </boxTitle>
+              <p>We prove that the statement is true for $n = 2$</p>
+              <p>
+                Since 2 is a prime number, prime factorization of 2 is 2 itself.
+              </p>
+            </textBox>
+          </section>
+          <section>
+            <textBox>
+              <boxTitle>
+                <h3>Induction Hypothesis</h3>
+              </boxTitle>
+              <p>
+                (Strong) Assume for all integers less than or equal to k, the
+                statement holds
+              </p>
+            </textBox>
+          </section>
+          <section>
+            <textBox>
+              <boxTitle>
+                <h3>Inductive Step</h3>
+              </boxTitle>
+              <p style="text-align: left; font-weight: bold">
+                Case 1: k+1 is a prime number
+              </p>
+              <p style="text-align: left">
+                Same as base case, it is prime factorization for itself.
+              </p>
+              <p style="text-align: left; font-weight: bold">
+                Case 2: k+1 is not a prime number
+              </p>
+              <p>
+                \[ k + 1 = p \times q \ (p,q \in \mathbb{Z^{+}}) \implies p,q
+                \le k + 1 \]
+              </p>
+              <p style="text-align: left">
+                From the induction hypothesis, both p and q can be factorized
+                into primes.
+              </p>
+            </textBox>
+          </section>
+        </section>
+        <!-- ################################################### -->
+        <!-- ################################################### -->
+        <section>
+          <h1>Countable & Uncountable Sets</h1>
+          <a
+            href="https://www.math.brown.edu/reschwar/MFS/handout8.pdf"
+            style="text-align: left; font-size: 15px"
+            >Reference Paper</a
+          >
+        </section>
+        <!-- ################################################### -->
+        <!-- ################################################### -->
+        <section>
+          <h3 style="font-weight: bold">Defining a Bijection</h3>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • A map f between sets $S_{1}$ and $S_{2}$ that is injective and
+            <br />
+              surjective.<br /><br />
+            • $S_{1} \sim S_{2} \implies \exists \ \ f : S_{1} \longrightarrow
+            S_{2}$, where f is a bijection <br /><br />
+            • For a bijection, $|S_{1}| = |S_{2}|$<br /><br />
+          </p>
+        </section>
+        <!-- ################################################### -->
+        <!-- ################################################### -->
+        <section>
+          <h3 style="font-weight: bold">Countable Set</h3>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • Set of all natural numbers is denoted by $\mathbb{N} =
+            \{1,2,...\}$<br /><br />
+            • A set S is called countable if $S \sim T$ for some $T \subseteq
+            \mathbb{N}$<br /><br />
+               • If $T \subset \mathbb{N}$, S is countably finite <br /><br />
+               • If $T = \mathbb{N}$, S is countably infinite <br /><br />
+          </p>
+        </section>
+        <section data-transition="slide-in fade-out">
+          <h3 style="font-weight: bold">Uncountable Set</h3>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • A set is uncountable if it is<br /><br />
+          </p>
+        </section>
+        <section data-transition="fade">
+          <h3 style="font-weight: bold">Uncountable Set</h3>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • A set is uncountable if it is not countable.<br /><br />
+          </p>
+        </section>
+        <section data-transition="fade-in slide-out">
+          <h3 style="font-weight: bold">Uncountable Set</h3>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • A set is uncountable if it is not countable.<br /><br />
+            • If the subset of a set is uncountable then that set is <br /> 
+            also uncountable.<br /><br />
+          </p>
+        </section>
+        <section data-transition="slide-in fade-out">
+          <h3 style="font-weight: bold">Examples</h3>
+          <h5>Give one example for each</h5>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • Countably Finite -<br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Countably Infinite - <br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Uncountably Finite - <br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Uncountably Infinite - <br /><br />
+          </p>
+        </section>
+        <section data-transition="fade">
+          <h3 style="font-weight: bold">Examples</h3>
+          <h5>Give one example for each</h5>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • Countably Finite - $\{1,2,3,4\}$<br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Countably Infinite - <br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Uncountably Finite - <br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Uncountably Infinite - <br /><br />
+          </p>
+        </section>
+        <section data-transition="fade">
+          <h3 style="font-weight: bold">Examples</h3>
+          <h5>Give one example for each</h5>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • Countably Finite - $\{1,2,3,4\}$<br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Countably Infinite - $\mathbb{Z}$ <br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Uncountably Finite - <br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Uncountably Infinite -<br /><br />
+          </p>
+        </section>
+        <section data-transition="fade">
+          <h3 style="font-weight: bold">Examples</h3>
+          <h5>Give one example for each</h5>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • Countably Finite - $\{1,2,3,4\}$<br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Countably Infinite - $\mathbb{Z}$ <br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Uncountably Finite - <br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Uncountably Infinite - $\mathbb{R}$<br /><br />
+          </p>
+        </section>
+        <section data-transition="fade-in slide-out">
+          <h3 style="font-weight: bold">Examples</h3>
+          <h5>Give one example for each</h5>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • Countably Finite - $\{1,2,3,4\}$<br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Countably Infinite - $\mathbb{Z}$ <br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold; color: red">
+            • Uncountably Finite - DOES NOT EXIST<br /><br />
+          </p>
+          <p style="text-align: left; font-weight: bold">
+            • Uncountably Infinite - $\mathbb{R}$<br /><br />
+          </p>
+        </section>
+        <section>
+          <h3 style="font-weight: bold">Examples of Uncountable Sets</h3>
+          <p style="text-align: left; font-weight: bold">
+            <br />
+            • Set of all infinite binary sequences - <br>   Cantor's Diagonal Argument<br /><br />
+            • Set of all real numbers between 0 and 1<br /><br />
+            • Set of Real Numbers<br /><br />
+            • Set of all Algebraic Numbers<br /><br />
+            • Set of all Transcedental Numbers<br /><br />
+          </p>
+        </section>
+      </div>
+    </div>
+    <!-- ################################################### -->
+    <!-- ################################################### -->
+    <!-- ################################################### -->
+    <!-- ################################################### -->
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // width: 960,
+        // height:700,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        // default/cube/page/concave/zoom/linear/fade/none
+        transition: Reveal.getQueryHash().transition || "slide",
+
+        //// Optional libraries used to extend on reveal.js
+        dependencies: [
+          // { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          // { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          {
+            src: "reveal.js/plugin/notes/notes.js",
+            async: true,
+            condition: function () {
+              return !!document.body.classList;
+            },
+          },
+          { src: "reveal.js/plugin/math/math.js", async: true },
+        ],
+      });
+      Reveal.configure({
+        keyboard: {
+          32: null, // don't do anything when SPACE is pressed (i.e. disable a reveal.js default binding) document.body.style.cursor = 'none';
+        },
+      });
+    </script>
+  </body>
+</html>
