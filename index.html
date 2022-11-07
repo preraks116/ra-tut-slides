@@ -29,94 +29,308 @@
         </section>
         <section>
           <h1>Complex Analysis</h1>
-          <a
+          <!-- <a
             href="http://www.cs.cornell.edu/courses/cs2800/2011fa/Lectures/induction.pdf"
             style="text-align: left; font-size: 15px"
             >Reference Paper</a
+          > -->
+        </section>
+        <section>
+          <h3>References</h3>
+          <a
+            href="https://www.youtube.com/watch?v=Rju2g-sExng&list=PLDcSwjT2BF_UDdkQ3KQjX5SRQ2DLLwv0R&index=2&ab_channel=Mathemaniac"
+            style="text-align: left; font-size: 15px"
+            >Complex Numbers Crash Course</a
           >
+          <br>
+          <a
+            href="https://www.youtube.com/watch?v=5PcpBw5Hbwo&ab_channel=3Blue1Brown"
+            style="text-align: left; font-size: 15px"
+          >3B1B Video on Complex Analysis</a
+          >
+          <br>
+          <!-- <a
+          href="https://www.youtube.com/watch?v=NtoIXhUgqSk&list=PLDcSwjT2BF_UDdkQ3KQjX5SRQ2DLLwv0R&index=3&ab_channel=Mathemaniac"
+          style="text-align: left; font-size: 15px"
+          >Complex Functions Visualization</a
+          > -->
         </section>
         <!-- ################################################### -->
         <!-- ################################################### -->
         <section data-auto-animate>
-          <h3 style="font-weight: bold">Concept of Mathematical Induction</h3>
+          <h2 style="font-weight: bold">Introduction</h2>
+          <br>
+          <h3>Problem</h3>
           <p style="text-align: left; font-weight: bold">
             <br />
-            • Technique mostly used for rigrously proving statements
-            <br /><br />
-            • Used to check the validity of a formula without having <br />
-              to check each and every case by hand <br /><br />
+            $$ \text{Find the solutions of the given equations} \\x^2 + 1 = 0 \\ x^2 + 4x + 5 = 0 \\ $$
           </p>
         </section>
         <section>
-          <h3 style="font-weight: bold">Components of Inductive Proof</h3>
+          <!-- <h2 style="font-weight: bold">Introduction</h2> -->
+          <!-- <br> -->
+          <h3>Solution</h3>
           <p style="text-align: left; font-weight: bold">
-            <br />
-            • Base case - usually $ n = 1 $ <br /><br />
-            • Induction Hypothesis - Strong/Weak (Assume $P(k)$ holds)
-            <br /><br />
-            • Inductive Step - Prove hypothesis ($P(k) \implies P(k+1)$)<br /><br />
+            • We define $i$ to be the "imaginary unit"<br /><br />
+            $$ i = \sqrt{-1} $$
           </p>
         </section>
         <section>
-          <h3 style="font-weight: bold">Strong v/s Weak Induction</h3>
-          <p>
+          <!-- <h3 style="font-weight: bold">Strong v/s Weak Induction</h3> -->
+          <h3>Solution</h3>
+          <!-- <p>
             The difference between weak induction and strong induction appears
             in the induction hypothesis
-          </p>
+          </p> -->
           <p style="text-align: left; font-weight: bold">
             <br />
-            • Weak Induction - $P$ is true only at k<br /><br />
-            • Strong Induction - $P$ is true $\forall \ \ i \ \in
-            \{1,2,3,...,k\}$ <br /><br />
+            $$ x^2 + 1 = 0 \\ x^2 = -1 \\ x = \pm i \\ 
+              \\ ------- \\ x^2 + 4x + 5 = 0 
+             \\ D = b^2 - 4ac
+             \\ D = 4^2 - 4(1)(5)
+              \\ D = -4
+              \\ x = \frac{-b \pm \sqrt{D}}{2a}
+              \\ x = -2 \pm i $$
+          </p>
+        </section>
+        <section>
+          <!-- <h2 style="font-weight: bold">Introduction</h2> -->
+          <!-- <br> -->
+          <h3>General Notation</h3>
+          <p style="text-align: left; font-weight: bold">
+            • Cartesian Form - $a+ib$<br /><br />
+            • Polar Form - $r e^{i\theta}$<br /><br />
+            • $r = \sqrt{a^2 + b^2}$<br /><br />
+            • $\theta = \tan^{-1}(\frac{b}{a})$
+          </p>
+        </section>
+        <section>
+          <img src="images/cartesian.png" />
+        </section>
+        <section>
+          <img src="images/polar.png" />
+        </section>
+        <section>
+          <h3>Conventions and Notations</h3>
+          <p style="text-align: left; font-weight: bold">
+            • The math is similar to that of vectors<br /><br />
+            • Real Part - $Re(z) = r\cos(\theta) = a$<br /><br />
+            • Imaginary Part - $Im(z) = r\sin(\theta) = b$<br /><br />
+            • Modulus - $|z| = r = \sqrt{a^2 + b^2}$ - always non-negative<br /><br />
+            • Argument - $arg(z) = \theta = \tan^{-1}(\frac{b}{a}) $<br /><br />
+            • Principle Argument - $arg(z) \in (-\pi, \pi] $ - pick smaller angle <br /><br />
+            • Anticlockwise angle is considered positive
+          </p>
+        </section>
+        <section>
+          <h3>Property of $i$</h3>
+          <p style="text-align: left; font-weight: bold">
+            • $i^2 = -1$<br /><br />
+            • $i^3 = -i$<br /><br />
+            • $i^4 = 1$<br /><br />
+            • $i^5 = i$<br /><br />
+            $$
+              i^n = 
+              \begin{cases}
+              1 &  ,\ n = 4x \\ 
+              i &  ,\ n = 4x + 1 \\ 
+              -1 &  ,\ n = 4x + 2 \\ 
+              -i &  ,\ n = 4x + 3 \\ 
+              \end{cases} \\ \\ \text{Here} \ x \in \mathbb{Z} \\
+            $$
           </p>
         </section>
         <section data-state="IonSlide">
-          <h3>Example</h3>
-          <br />
-          <h4>Prove the following statement is true for all integers $n$.</h4>
-          $$P:\sum_{i=1}^n i = \frac{n(n+1)}{2}$$
+          <h3>Euler's Formula</h3>
           <section style="margin-top: 10%">
             <textBox touch-action="none">
               <boxTitle>
-                <h3>Base Case</h3>
+                <h3>Given</h3>
               </boxTitle>
               <p>
-                We prove that the statement is true for $n = 1$ \[
-                P(1):\sum_{i=1}^1 i = \frac{1(1 + 1)}{2} = 1\]
+                $$
+            |z| = r \\ 
+            Re(z) = r\cos(\theta)\\
+            Im(z) = r\sin(\theta)\\
+            z = r(\cos(\theta) + i\sin(\theta)) \\
+            $$
               </p>
             </textBox>
           </section>
           <section style="margin-top: 10%">
-            <textBox>
+            <textBox touch-action="none">
               <boxTitle>
-                <h3>Induction Hypothesis</h3>
+                <h3>Taylor Series Expansion</h3>
               </boxTitle>
               <p>
-                (Weak) Assume the statement to be true for some $n=k$
-                \[P(k):\sum_{i=1}^{k}i=\frac{k(k+1)}{2}\]
+                $$
+                \text{Using taylor series expansion for sine and cosine, we get} \\
+                sin(x) = \sum_{j=1}^{\infty}\frac{(-1)^j}{(2j+1)!}x^{2j+1} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots \\ 
+                cos(x) = \sum_{j=0}^{\infty}\frac{(-1)^j}{(2j)!}x^{2j} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \\
+                $$
               </p>
             </textBox>
           </section>
           <section style="margin-top: 10%">
-            <textBox>
+            <textBox touch-action="none">
               <boxTitle>
-                <h3>Inductive Step</h3>
+                <h3>Proof</h3>
               </boxTitle>
               <p>
-                We prove the statement for $n=k+1$
-                $$P(k+1):\sum_{i=1}^{k+1}i=\sum_{i=1}^{k}i+(k+1)=\frac{k(k+1)}{2}+k+1=\frac{(k+1)(k+2)}{2}$$
-                Thus, $P$ is true for all $n$
+                $$
+                cos(x) + isin(x) = 1 + ix - \frac{x^2}{2} - i\frac{x^3}{3} + \frac{x^4}{4} + i\frac{x^5}{5} - \frac{x^6}{6} - i\frac{x^7}{7} + \cdots \\
+                $$
+              </p>
+            </textBox>
+          </section>
+          <section style="margin-top: 10%">
+            <textBox touch-action="none">
+              <boxTitle>
+                <h3>Observation and Conclusion</h3>
+              </boxTitle>
+              <p>
+                $$
+                e^x = \sum_{j=0}^{\infty}\frac{x^j}{j!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots \\
+                e^{ix} = \sum_{j=0}^{\infty}\frac{(ix)^j}{j!} = 1 + ix - \frac{x^2}{2!} - i\frac{x^3}{3!} + \frac{x^4}{4!} + i\frac{x^5}{5!} - \frac{x^6}{6!} - i\frac{x^7}{7!} + \cdots \\
+                \therefore e^{ix} = cos(x) + isin(x) \\
+                $$
               </p>
             </textBox>
           </section>
         </section>
         <section data-state="IonSlide">
-          <h3>Weak Induction Example</h3>
+          <h3>Properties of Modulus and Amplitude</h3>
+          <!-- <br />
+          <h4>Prove the following statement is true for all integers $n$.</h4> -->
+          <!-- $$P:\sum_{i=1}^n i = \frac{n(n+1)}{2}$$ -->
+          <section style="margin-top: 10%">
+            <textBox touch-action="none">
+              <boxTitle>
+                <h3>Modulus Function</h3>
+              </boxTitle>
+              <p>
+                $$
+                |z_1z_2| = |z_1||z_2| \\
+                |\frac{z_1}{z_2}| = \frac{|z_1|}{|z_2|} \\
+                z - \bar{z} = |z|^2 = z\bar{z} \\ 
+                |z^n| = |z|^n
+                $$
+              </p>
+            </textBox>
+          </section>
+          <section style="margin-top: 10%">
+            <textBox touch-action="none">
+              <boxTitle>
+                <h3>Amplitude Function</h3>
+              </boxTitle>
+              <p>
+                Amplitude function works similar to the logarithmic function $y = log(x)$
+                $$
+                  arg(z_1z_2) = arg(z_1) + arg(z_2) \\
+                  arg(\frac{z_1}{z_2}) = arg(z_1) - arg(z_2) \\
+                  arg(z^n) = n \cdot arg(z) \\
+                  arg(x) = 0 \ \forall \ x \in R^{+} \\ 
+                  arg(x) = \pi \ \forall \ x \in R^{-} 
+                $$
+              </p>
+            </textBox>
+          </section>
+        </section>
+        <section data-state="IonSlide">
+          <h3>Some More Properties of Complex Numbers</h3>
+          <!-- <br />
+          <h4>Prove the following statement is true for all integers $n$.</h4> -->
+          <!-- $$P:\sum_{i=1}^n i = \frac{n(n+1)}{2}$$ -->
+          <section style="margin-top: 10%">
+            <textBox touch-action="none">
+              <boxTitle>
+                <h3>Addition and Subtraction</h3>
+              </boxTitle>
+              <p>
+                $$
+                z_1 + z_2 = (a_1 + b_1i) + (a_2 + b_2i) = (a_1 + a_2) + (b_1 + b_2)i \\
+                z_1 - z_2 = (a_1 + b_1i) - (a_2 + b_2i) = (a_1 - a_2) + (b_1 - b_2)i \\
+                $$
+              </p>
+            </textBox>
+          </section>
+          <section style="margin-top: 10%">
+            <textBox touch-action="none">
+              <boxTitle>
+                <h3>Multiplication and Division</h3>
+              </boxTitle>
+              <p>
+                $$
+                z_1z_2 = (a_1 + b_1i)(a_2 + b_2i) = (a_1a_2 - b_1b_2) + (a_1b_2 + a_2b_1)i \\
+                z_1z_2 = (r_1e^{i\theta_1})(r_2e^{i\theta_2}) = r_1r_2e^{i(\theta_1 + \theta_2)} \\
+                \frac{z_1}{z_2} = \frac{r_1e^{i\theta_1}}{r_2e^{i\theta_2}} = r_1e^{i(\theta_1 - \theta_2)} \\
+                \frac{a_1 + ib_1}{a_2 + ib_2} = \frac{a_1 + ib_1}{a_2 + ib_2} \cdot \frac{a_2 - ib_2}{a_2 - ib_2} = \frac{a_1a_2 + b_1b_2}{a_2^2 + b_2^2} + \frac{a_2b_1 - a_1b_2}{a_2^2 + b_2^2}i \\
+                $$
+              </p>
+            </textBox>
+          </section>
+          <section style="margin-top: 10%">
+            <textBox touch-action="none">
+              <boxTitle>
+                <h3>De-Moivre's Theorem</h3>
+              </boxTitle>
+              <p>
+                $$
+                  z = r e^{i\theta} \\
+                  z^n = r^n e^{i\theta n} \\
+                  z^n = r^n(cos(n\theta ) + isin(n\theta)) \\
+                  \text{At } r = 1 \\
+                  (cos(\theta) + isin(\theta))^n = cos(n\theta) + isin(n\theta) \\
+                $$
+              </p>
+            </textBox>
+          </section>
+          <section style="margin-top: 10%">
+            <textBox touch-action="none">
+              <boxTitle>
+                <h3>Triangular Inequality</h3>
+              </boxTitle>
+              <p>
+                $$
+                |z_1 + z_2| = \sqrt{|z_1|^2 + |z_2|^2 + 2|z_1||z_2|\cos(\phi)} \\ \phi = arg(z_1 - z_2) \\
+                \therefore |z_1 + z_2| \leq |z_1| + |z_2| \\ \text{Equality is reached at } \phi = 0 \\
+                \text{The above formula can be generalized to} \\ 
+                \sum_{i=1}^n |z_i| \leq \sum_{i=1}^n |z_i| \\
+                $$
+              </p>
+            </textBox>
+          </section>
+          <section style="margin-top: 10%">
+            <textBox touch-action="none">
+              <boxTitle>
+                <h3>$n^{th}$ root</h3>
+              </boxTitle>
+              <p>
+                $$
+                  \text{For 2 complex numbers} \ w \ \text{and} \ z \\
+                  \text{Let } w^n = z \\ 
+                  w = r_1e^{i\theta_1} \ \text{and} \ z = r_2e^{i\theta_2} \\
+                  z^n = r_2^n e^{i\theta_2n} \\
+                  \therefore r_1^n = r_2 \ \text{and} \ \theta_1n = \theta_2 + 2k\pi \\ 
+                  0 \leq k \leq n - 1 \\
+                  \therefore w = r_2^{\frac{1}{n}}e^{i\frac{\theta_2 + 2k\pi}{n}} \\
+
+                $$
+              </p>
+            </textBox>
+          </section>
+        </section>
+        <section data-state="IonSlide">
+          <h2>Examples</h2>
           <br />
-          <h4>Show that</h4>
-          $$P: \sqrt{2 + \sqrt{2 + \sqrt{2 + \ ... \ + \sqrt{2}}}} =
-          2\cos{\frac{\pi}{2^{n+1}}}$$
-          <p>Here there are $n$ 2s in the expression on the left</p>
+          <!-- <h3>Q1</h3> -->
+          <p>Find the modulus and amplitude of the following complex numbers</p>
+          <p style="text-align: left; font-weight: bold">
+            1. $0$<br /><br>
+            2. $i^i$<br /><br>
+            3. $z = a^i, a \in R$<br /><br>
+            4. $\log(-2)$
+          </p>
         </section>
         <script src="js/ionChannelAnim.js"></script>
         <!-- ################################################### -->
@@ -127,255 +341,58 @@
           <section>
             <textBox touch-action="none">
               <boxTitle>
-                <h3>Base Case</h3>
+                <h3>1.1</h3>
               </boxTitle>
               <p>
-                We prove that the statement is true for $n = 1$ \[ P(1):\sqrt{2}
-                = 2\cos{\frac{\pi}{2^{2}}} = \sqrt{2}\]
+                It is just a matter of convention, it can be considered to be 0 or undefined.
               </p>
             </textBox>
           </section>
           <section>
             <textBox>
               <boxTitle>
-                <h3>Induction Hypothesis</h3>
+                <h3>1.2</h3>
               </boxTitle>
-              <p>(Weak) Assume the statement to be true for some $n=k$</p>
-              \[ P(k): \sqrt{2 + \sqrt{2 + \sqrt{2 + \ ... \ + \sqrt{2}}}} =
-              2\cos{\frac{\pi}{2^{k+1}}} \]
+              $$
+                z = a^i \\
+                e^{\log(z)} = e^{i \cdot \log(a)} \\
+                \therefore |z| = |e^{i \cdot \log(a)}| = 1 \\ \text{and} \\ arg(z) = \log(a) \\
+              $$
             </textBox>
           </section>
           <section>
             <textBox>
               <boxTitle>
-                <h3>Inductive Step</h3>
+                <h3>1.3</h3>
               </boxTitle>
-              <p>Adding 2 and taking square root on both sides</p>
-              \[ P(k+1): \sqrt{2 + 2\cos{\frac{\pi}{2^{k+1}}}} =
-              2\cos{\frac{\pi}{2^{k+2}}} \]
-            </textBox>
-          </section>
-        </section>
-        <!-- ################################################### -->
-        <!-- ################################################### -->
-        <section data-state="IonSlide">
-          <h3>Strong Induction Example</h3>
-          <br />
-          <h4>
-            Show that every integer greater than or equal to 2 can be factored
-            into primes
-          </h4>
-        </section>
-        <script src="js/ionChannelAnim.js"></script>
-        <!-- ################################################### -->
-        <!-- ################################################### -->
-        <section>
-          <h3>Solution</h3>
-          <br />
-          <section>
-            <textBox touch-action="none">
-              <boxTitle>
-                <h3>Base Case</h3>
-              </boxTitle>
-              <p>We prove that the statement is true for $n = 2$</p>
-              <p>
-                Since 2 is a prime number, prime factorization of 2 is 2 itself.
-              </p>
+              $$
+                i^i = e^{\log(i^i)} \\
+                i^i = e^{i \cdot \log(i)} \\
+                i = e^{i \cdot \frac{\pi}{2}} = \cos(\frac{\pi}{2}) + i\cdot \sin(\frac{\pi}{2}) \\
+                \implies i^i = e^{i \cdot \log(e^{i \cdot \frac{\pi}{2}})} \\
+                \implies i^i = e^{ i \cdot i \cdot \frac{\pi}{2}} \\
+                \therefore \ i^i = e^{-\frac{\pi}{2}} \\
+
+              $$
             </textBox>
           </section>
           <section>
             <textBox>
               <boxTitle>
-                <h3>Induction Hypothesis</h3>
+                <h3>1.4</h3>
               </boxTitle>
-              <p>
-                (Strong) Assume for all integers less than or equal to k, the
-                statement holds
-              </p>
-            </textBox>
-          </section>
-          <section>
-            <textBox>
-              <boxTitle>
-                <h3>Inductive Step</h3>
-              </boxTitle>
-              <p style="text-align: left; font-weight: bold">
-                Case 1: k+1 is a prime number
-              </p>
-              <p style="text-align: left">
-                Same as base case, it is prime factorization for itself.
-              </p>
-              <p style="text-align: left; font-weight: bold">
-                Case 2: k+1 is not a prime number
-              </p>
-              <p>
-                \[ k + 1 = p \times q \ (p,q \in \mathbb{Z^{+}}) \implies p,q
-                \le k + 1 \]
-              </p>
-              <p style="text-align: left">
-                From the induction hypothesis, both p and q can be factorized
-                into primes.
-              </p>
+              $$
+                z = |z|e^{i\theta} \\ 
+                log(z) = log(|z|e^{i\theta}) \\
+                log(z) = log(|z|) + log(e^{i\theta}) \\
+                \therefore log(z) = log(|z|) + i\theta \\
+                \therefore log(-2) = log(2) + \pi i \\ 
+              $$
             </textBox>
           </section>
         </section>
         <!-- ################################################### -->
         <!-- ################################################### -->
-        <section>
-          <h1>Countable & Uncountable Sets</h1>
-          <a
-            href="https://www.math.brown.edu/reschwar/MFS/handout8.pdf"
-            style="text-align: left; font-size: 15px"
-            >Reference Paper</a
-          >
-        </section>
-        <!-- ################################################### -->
-        <!-- ################################################### -->
-        <section>
-          <h3 style="font-weight: bold">Defining a Bijection</h3>
-          <p style="text-align: left; font-weight: bold">
-            <br />
-            • A map f between sets $S_{1}$ and $S_{2}$ that is injective and
-            <br />
-              surjective.<br /><br />
-            • $S_{1} \sim S_{2} \implies \exists \ \ f : S_{1} \longrightarrow
-            S_{2}$, where f is a bijection <br /><br />
-            • For a bijection, $|S_{1}| = |S_{2}|$<br /><br />
-          </p>
-        </section>
-        <!-- ################################################### -->
-        <!-- ################################################### -->
-        <section>
-          <h3 style="font-weight: bold">Countable Set</h3>
-          <p style="text-align: left; font-weight: bold">
-            <br />
-            • Set of all natural numbers is denoted by $\mathbb{N} =
-            \{1,2,...\}$<br /><br />
-            • A set S is called countable if $S \sim T$ for some $T \subseteq
-            \mathbb{N}$<br /><br />
-               • If $T \subset \mathbb{N}$, S is countably finite <br /><br />
-               • If $T = \mathbb{N}$, S is countably infinite <br /><br />
-          </p>
-        </section>
-        <section data-transition="slide-in fade-out">
-          <h3 style="font-weight: bold">Uncountable Set</h3>
-          <p style="text-align: left; font-weight: bold">
-            <br />
-            • A set is uncountable if it is<br /><br />
-          </p>
-        </section>
-        <section data-transition="fade">
-          <h3 style="font-weight: bold">Uncountable Set</h3>
-          <p style="text-align: left; font-weight: bold">
-            <br />
-            • A set is uncountable if it is not countable.<br /><br />
-          </p>
-        </section>
-        <section data-transition="fade-in slide-out">
-          <h3 style="font-weight: bold">Uncountable Set</h3>
-          <p style="text-align: left; font-weight: bold">
-            <br />
-            • A set is uncountable if it is not countable.<br /><br />
-            • If the subset of a set is uncountable then that set is <br /> 
-            also uncountable.<br /><br />
-          </p>
-        </section>
-        <section data-transition="slide-in fade-out">
-          <h3 style="font-weight: bold">Examples</h3>
-          <h5>Give one example for each</h5>
-          <p style="text-align: left; font-weight: bold">
-            <br />
-            • Countably Finite -<br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Countably Infinite - <br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Uncountably Finite - <br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Uncountably Infinite - <br /><br />
-          </p>
-        </section>
-        <section data-transition="fade">
-          <h3 style="font-weight: bold">Examples</h3>
-          <h5>Give one example for each</h5>
-          <p style="text-align: left; font-weight: bold">
-            <br />
-            • Countably Finite - $\{1,2,3,4\}$<br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Countably Infinite - <br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Uncountably Finite - <br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Uncountably Infinite - <br /><br />
-          </p>
-        </section>
-        <section data-transition="fade">
-          <h3 style="font-weight: bold">Examples</h3>
-          <h5>Give one example for each</h5>
-          <p style="text-align: left; font-weight: bold">
-            <br />
-            • Countably Finite - $\{1,2,3,4\}$<br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Countably Infinite - $\mathbb{Z}$ <br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Uncountably Finite - <br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Uncountably Infinite -<br /><br />
-          </p>
-        </section>
-        <section data-transition="fade">
-          <h3 style="font-weight: bold">Examples</h3>
-          <h5>Give one example for each</h5>
-          <p style="text-align: left; font-weight: bold">
-            <br />
-            • Countably Finite - $\{1,2,3,4\}$<br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Countably Infinite - $\mathbb{Z}$ <br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Uncountably Finite - <br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Uncountably Infinite - $\mathbb{R}$<br /><br />
-          </p>
-        </section>
-        <section data-transition="fade-in slide-out">
-          <h3 style="font-weight: bold">Examples</h3>
-          <h5>Give one example for each</h5>
-          <p style="text-align: left; font-weight: bold">
-            <br />
-            • Countably Finite - $\{1,2,3,4\}$<br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Countably Infinite - $\mathbb{Z}$ <br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold; color: red">
-            • Uncountably Finite - DOES NOT EXIST<br /><br />
-          </p>
-          <p style="text-align: left; font-weight: bold">
-            • Uncountably Infinite - $\mathbb{R}$<br /><br />
-          </p>
-        </section>
-        <section>
-          <h3 style="font-weight: bold">Examples of Uncountable Sets</h3>
-          <p style="text-align: left; font-weight: bold">
-            <br />
-            • Set of all infinite binary sequences - <br>   Cantor's Diagonal Argument<br /><br />
-            • Set of all real numbers between 0 and 1<br /><br />
-            • Set of Real Numbers<br /><br />
-            • Set of all Algebraic Numbers<br /><br />
-            • Set of all Transcedental Numbers<br /><br />
-          </p>
-        </section>
       </div>
     </div>
     <!-- ################################################### -->
